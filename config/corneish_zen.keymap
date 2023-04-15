@@ -57,34 +57,49 @@
 &lt LEVCMD BSPC &mt LSHIFT ESC &mt LCMD TAB                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
                         >;
                 };
-                lower_layer {
-                        label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                adjust_layer {
+                        label = "SHIFT";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+&trans &kp LS(Q) &kp LS(H)   &kp LS(O)     &kp LS(U) &kp LS(X)         &kp LS(G)   &kp LS(C)  &kp LS(M)  &kp LS(R)   &kp LS(V)    &trans
+&trans &kp LS(Y) &kp LS(I)   &kp LS(E)     &kp LS(A) &kp GRAVE         &kp LS(D)   &kp LS(S)  &kp LS(T)  &kp LS(N)   &kp LS(B)    &trans
+&trans &kp LS(J) &kp EXCL    &kp QMARK     &kp LS(K) &kp SQT           &kp LS(W)   &kp LS(F)  &kp LS(L)  &kp LS(P)   &kp LS(Z)    &trans
+
+&trans &trans &trans                  &trans &trans &trans
                         >;
                 };
 
-                raise_layer {
-                        label = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                punct_layer {
+                        label = "SYM";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+&trans &none     &kp LT    &kp EQUAL &kp GT    &kp HASH      &kp PLUS  &kp LBKT &kp UNDER &kp RBKT &none       &trans
+&trans &kp BSLH  &kp LPAR  &kp MINUS &kp RPAR  &kp DLLR      &kp EXCL  &kp LBRC &kp  SEMI &kp RBRC &kp PERCENT &trans
+&trans &none     &kp STAR  &kp COLON &kp SLASH &kp AT        &kp CARET &kp PIPE &kp TILDE &kp AMPS &none       &trans
+
+&trans &trans &trans                 &trans &trans &trans
                         >;
                 };
+
+                num_layer {
+                        label = "NUM";
+                        bindings = <
+&trans &none &none    &kp UP   &kp LG(C) &kp LG(V)      &reset &kp N7 &kp N8 &kp N9 &kp N0 &trans
+&trans &none &kp LEFT &kp DOWN &kp RIGHT &a_DOT         &none  &kp N4 &kp N5 &kp N6 &none  &trans
+&trans &none &kp EQUAL &kp MINUS &kp SLASH  &kp PLUS    &none  &kp N1 &kp N2 &kp N3 &kp N0 &trans
+
+&trans &trans &trans                 &trans &trans &trans
+                        >;
+                };
+
+                shortcut_layer {
+                        label = "CMD";
+                        bindings = <
+&trans &kp LG(Q) &kp LG(W) &kp LG(E) &kp LG(R) &kp LG(T)     &reset &kp N7 &kp N8 &kp N9 &kp N0 &trans
+&trans &kp LG(A) &kp LG(S) &kp LG(D) &kp LG(F) &kp LG(G)     &none  &kp N4 &kp N5 &kp N6 &none  &trans
+&trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp LG(B)     &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp N0 &trans
+
+&trans &trans &trans                 &trans &trans &trans
+                        >;
+                };
+
         };
 };
