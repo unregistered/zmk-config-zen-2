@@ -7,6 +7,7 @@
 #define LEVSYM 2
 #define LEVNUM 3
 #define LEVCMD 4
+#define LEVGAME 5
 
 &lt {
     quick-tap-ms = <300>;
@@ -50,7 +51,7 @@
                 default_layer {
                         label = "MAIN";
                         bindings = <
-&mt LALT GRAVE   &kp Q &kp H   &kp O     &kp U &kp X         &kp G   &kp C  &kp M  &kp R   &kp V    &kp LC(LG(SPACE))
+&mt LALT GRAVE   &kp Q &kp H   &kp O     &kp U &kp X         &kp G   &kp C  &kp M  &kp R   &kp V    &to LEVGAME
 &mt LCTRL ESC    &kp Y &kp I   &kp E     &kp A &a_DOT        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
 &mt LSHIFT TAB   &kp J &a_DQT &a_COMMA &kp K &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
 
@@ -98,6 +99,17 @@
 &trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp LG(B)     &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp N0 &trans
 
 &trans &trans &trans                 &trans &trans &trans
+                        >;
+                };
+
+                game_layer {
+                        label = "GAME";
+                        bindings = <
+&mt LALT GRAVE   &kp Q &kp Q   &kp W     &kp E &kp R         &kp G   &kp C  &kp M  &kp R   &kp V    &to LEVMAIN
+&mt LCTRL ESC    &kp Y &kp A   &kp S     &kp D &kp F        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
+&kp LSHIFT       &kp J &kp X &kp C &kp V &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
+
+&kp LCTRL &kp LCMD &kp SPACE                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
                         >;
                 };
 
