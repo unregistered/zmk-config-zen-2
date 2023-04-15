@@ -2,6 +2,16 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define LEVMAIN 0
+#define LEVSHIFT 1
+#define LEVSYM 2
+#define LEVNUM 3
+#define LEVCMD 4
+
+&lt {
+    quick-tap-ms = <300>;
+};
+
 / {
   chosen {
     zmk,matrix_transform = &default_transform;
@@ -10,21 +20,41 @@
 };
 
 / {
+        behaviors {
+            a_DQT: a_DQT {
+                compatible = "zmk,behavior-mod-morph";
+                label = "a_DQT";
+                #binding-cells = <0>;
+                bindings = <&kp DQT>, <&kp EXCL>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+            a_COMMA: a_COMMA {
+                compatible = "zmk,behavior-mod-morph";
+                label = "a_COMMA";
+                #binding-cells = <0>;
+                bindings = <&kp COMMA>, <&kp QMARK>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+            a_DOT: a_DOT {
+                compatible = "zmk,behavior-mod-morph";
+                label = "a_DOT";
+                #binding-cells = <0>;
+                bindings = <&kp DOT>, <&kp GRAVE>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "QWERTY";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        label = "MAIN";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+&mt LALT GRAVE   &kp Q &kp H   &kp O     &kp U &kp X         &kp G   &kp C  &kp M  &kp R   &kp V    &kp LC(LG(SPACE))
+&mt LCTRL ESC    &kp Y &kp I   &kp E     &kp A &a_DOT        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
+&mt LSHIFT TAB   &kp J &a_DQT &a_COMMA &kp K &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
+
+&lt LEVCMD BSPC &mt LSHIFT ESC &mt LCMD TAB                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
                         >;
                 };
                 lower_layer {
