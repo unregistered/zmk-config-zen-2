@@ -8,6 +8,7 @@
 #define LEVNUM 3
 #define LEVCMD 4
 #define LEVGAME 5
+#define LEVGAMENUM 6
 
 &lt {
     quick-tap-ms = <300>;
@@ -109,7 +110,18 @@
 &mt LCTRL ESC    &kp Y &kp A   &kp S     &kp D &kp F        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
 &kp LSHIFT       &kp J &kp X &kp C &kp V &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
 
-&kp LCTRL &kp LCMD &kp SPACE                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
+&mo LEVGAMENUM &kp SPACE &kp SHIFT                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
+                        >;
+                };
+
+                game_num_layer {
+                        label = "GAME";
+                        bindings = <
+&mt LALT GRAVE   &trans &kp N7 &kp N8 &kp N9 &trans       &trans &trans &trans &trans &trans &to LEVMAIN
+&mt LCTRL ESC    &trans &kp N4 &kp N5 &kp N6 &trans       &trans &trans &trans &trans &trans &trans
+&kp LSHIFT       &kp N0 &kp N1 &kp N2 &kp N3 &trans       &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans                &trans &trans &trans
                         >;
                 };
 
