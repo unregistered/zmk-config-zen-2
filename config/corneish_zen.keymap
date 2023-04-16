@@ -110,7 +110,7 @@
 &mt LCTRL ESC    &kp Y &kp A   &kp S     &kp D &kp F        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
 &kp LSHIFT       &kp J &kp X &kp C &kp V &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
 
-&mo LEVGAMENUM &kp SPACE &kp SHIFT                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
+&mo LEVGAMENUM &kp SPACE &kp LSHIFT                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
                         >;
                 };
 
