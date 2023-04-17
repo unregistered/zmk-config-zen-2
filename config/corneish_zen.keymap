@@ -106,9 +106,9 @@
                 game_layer {
                         label = "GAME";
                         bindings = <
-&mt LALT GRAVE   &kp Q &kp Q   &kp W     &kp E &kp R         &kp G   &kp C  &kp M  &kp R   &kp V    &to LEVMAIN
-&mt LCTRL ESC    &kp Y &kp A   &kp S     &kp D &kp F        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
-&kp LSHIFT       &kp J &kp X &kp C &kp V &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
+&mt LCTRL ESC   &kp Q &kp W   &kp E     &kp R &kp T         &kp G   &kp C  &kp M  &kp R   &kp V    &to LEVMAIN
+&lt LEVMAIN ESC    &kp A &kp S   &kp D     &kp F &kp G        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
+&kp LSHIFT       &kp N1 &kp N2 &kp N3 &kp N4 &kp N5         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
 
 &mo LEVGAMENUM &kp SPACE &kp LSHIFT                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
                         >;
