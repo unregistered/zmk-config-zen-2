@@ -52,21 +52,11 @@
                 default_layer {
                         label = "MAIN";
                         bindings = <
-&mt LALT GRAVE   &kp Q &kp H   &kp O     &kp U &kp X         &kp G   &kp C  &kp M  &kp R   &kp V    &to LEVGAME
-&mt LCTRL ESC    &kp Y &kp I   &kp E     &kp A &a_DOT        &kp D   &kp S  &kp T  &kp N   &kp B    &kp LG(C)
-&mt LSHIFT TAB   &kp J &a_DQT &a_COMMA &kp K &kp SQT         &kp W   &kp F  &kp L  &kp P   &kp Z    &kp LALT
+&mt LALT GRAVE   &kp B &kp Y   &kp O  &kp U &kp SQT         &kp SEMI  &kp L  &kp D  &kp W   &kp V    &kp Z
+&mt LCTRL ESC    &kp C &kp I   &kp E  &kp A &kp COMMA       &kp DOT   &kp H  &kp T  &kp S   &kp N    &kp Q
+&mt LSHIFT TAB   &kp G &kp X   &kp J  &kp K &kp MINUS       &kp SLASH &kp R  &kp M  &kp F   &kp P    &kp EQUAL
 
 &lt LEVCMD BSPC &mt LSHIFT ESC &mt LCMD TAB                &mt LC(LA(LSHIFT)) RET &lt LEVSYM SPACE &mo LEVNUM
-                        >;
-                };
-                adjust_layer {
-                        label = "SHIFT";
-                        bindings = <
-&trans &kp LS(Q) &kp LS(H)   &kp LS(O)     &kp LS(U) &kp LS(X)         &kp LS(G)   &kp LS(C)  &kp LS(M)  &kp LS(R)   &kp LS(V)    &trans
-&trans &kp LS(Y) &kp LS(I)   &kp LS(E)     &kp LS(A) &kp GRAVE         &kp LS(D)   &kp LS(S)  &kp LS(T)  &kp LS(N)   &kp LS(B)    &trans
-&trans &kp LS(J) &kp EXCL    &kp QMARK     &kp LS(K) &kp SQT           &kp LS(W)   &kp LS(F)  &kp LS(L)  &kp LS(P)   &kp LS(Z)    &trans
-
-&trans &trans &trans                  &trans &trans &trans
                         >;
                 };
 
